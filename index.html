@@ -7,13 +7,14 @@
     <title>Music Player</title>
     <link rel="stylesheet" href="music.css">
 </head>
-<body>
+<body class="">
     <h1>Music Player</h1>
     <div class="music">
         <div class="image"></div>
         <div class="title">Music name</div>
+        
         <div class="player">
-            <audio src=""></audio>
+            <audio src="" ></audio>
             <div class="btns">
                 <span class="prev">
                     <ion-icon name="play-back-outline"></ion-icon>
@@ -31,26 +32,39 @@
             <span class="dark" onclick="darkLightMode()">
                 <ion-icon name="moon-outline"></ion-icon>
             </span>
-            <span class="download">
+            <a class="download" href="" download="">
                 <ion-icon name="download-outline"></ion-icon>
-            </span>
+            </a>
         </div>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
-        
+
         function darkLightMode(){
             const body=document.querySelector('body');
             body.classList.toggle('dark');
         }
-        
+
+       
+
+
+
         const image=document.querySelector('.image');
         const title=document.querySelector('.title');
         const prev=document.querySelector('.prev');
         const playPause=document.querySelector('.playPause');
         const next=document.querySelector('.next');
         const audio=document.querySelector('audio');
+        const download=document.querySelector('.download');
+        const progress=document.querySelector('#seekbar');
+
+        
+
+
+        
+
+        
 
 
         // song list
@@ -107,10 +121,14 @@
             title.textContent= songList.songName;
             audio.src = songList.path;
             image.style.backgroundImage = songList.image;
+            download.href=songList.path;
+            download.download=songList.songName;
+            
+            // audio.onprogress= function(){
+            // progress.value=this.currentTime/this.duration;
+            // };
         }
-
         //  ccurrent song
-
         let i=1;
 
         // onload select first song from list
