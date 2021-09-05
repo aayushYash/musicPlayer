@@ -16,11 +16,39 @@ body{
     flex-direction: column;
 }
 
+body.dark{
+    background: #091921;
+}
+
+body.dark h1{
+    color: #fff;
+}
+
+body.dark .music{
+    border: 4px solid #091921;
+    background: #091921;
+    box-shadow: 
+        -10px -10px 15px #091921,
+        10px 10px 15px rgba(255 255 255 / 0.1),
+        -10px -10px 15px rgba(255 255 255 / 0.1),
+        inset -5px -5px 15px #091921,
+        inset 5px 5px 15px rgba(255 255 255 / 0.15),
+        inset -5px -5px 15px #091921,
+        inset -10px -10px 15px rgba(255 255 255 / 0.15)
+    ;
+
+}
+
+body.dark .music .title{
+    color: aqua;
+}
+
 body h1{
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
     position: relative;
+    overflow: hidden;
 }
 body h1::before{
     content: '';
@@ -30,6 +58,10 @@ body h1::before{
     bottom: -2px;
     background-color: #ff669a;
     transform: translateX(-40px);
+}
+
+body.dark h1::before{
+    background-color: aqua;
 }
 .music{
     display: flex;
@@ -58,11 +90,23 @@ body h1::before{
     position: relative;
     width: 200px;
     border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 
+        inset 0 -5px 5px rgba(0 0 0 / 0.1),
+        0 5px 10px rgba(0 0 0 / 0.1),
+        0 10px 15px rgba(0 0 0 / 0.1);
+}
+body.dark .music .image{
+    border: 4px solid #091921;
+    box-shadow: 
+        inset 0 -5px 5px rgba(255 255 255 / 0.1),
+        0 5px 10px rgba(255 255 255 / 0.1),
+        0 10px 15px rgba(255 255 255 / 0.1);
 }
 .music .title{
     font-weight: 500;
     font-size: 2em;
-    color: #38a7ff;
+    color: #ff669a;
     display: inline-flex;
     text-align: center;
     margin-bottom: 20px;
@@ -82,7 +126,16 @@ body h1::before{
         inset 5px 5px 15px rgba(0 0 0 / 0.1)
     ;
 } 
-
+body.dark .music .player{
+    background:#091921;
+    box-shadow: 
+        -10px -10px 15px #091921,
+        10px 10px 15px rgba(255 255 255 / 0.1),
+        inset -5px -5px 15px #091921,
+        inset 5px 5px 15px rgba(255 255 255 / 0.1)
+    ;
+    border: 5px solid #091921;
+}
 .music .player .btns{
     position: relative;
     display: flex;
@@ -108,6 +161,14 @@ body h1::before{
         0 10px 15px rgba(0 0 0 / 0.1);
 
 }
+body.dark .music .player .btns span{
+    background: #091921;
+    box-shadow: 
+        inset 0 -5px 5px rgba(255 255 255 / 0.1),
+        0 5px 10px rgba(255 255 255 / 0.1),
+        0 10px 15px rgba(255 255 255 / 0.1);
+    color: #fff;    
+}
 .music .player .btns span:active,
 .music .player .btns span.active{
     color: #ff669a;
@@ -115,6 +176,15 @@ body h1::before{
         inset 0 -7px 5px rgba(0 0 0 / 0.25),
         inset 0 5px 10px rgba(0 0 0 / 0.15);
 }
+
+body.dark .music .player .btns span:active,
+body.dark .music .player .btns span.active{
+    color: aqua;
+    box-shadow: 
+        inset 0 -7px 5px rgba(255 255 255 / 0.25),
+        inset 0 5px 10px rgba(255 255 255 / 0.15);
+}
+
 .music .player .btns span.playPause{
     width: 100px;
     height: 100px;
@@ -157,6 +227,15 @@ body h1::before{
         0 10px 15px rgba(0 0 0 / 0.1);
 }
 
+body.dark .music .extrabtns span{
+    background: #091921;
+    color: #fff;
+    box-shadow: 
+        inset 0 -5px 5px rgba(255 255 255 / 0.1),
+        0 5px 10px rgba(255 255 255 / 0.1),
+        0 10px 15px rgba(255 255 255 / 0.1);
+}
+
 .music .extrabtns span{
     font-size: 2em;
     color: #777;
@@ -169,6 +248,12 @@ body h1::before{
         inset 0 5px 10px rgba(0 0 0 / 0.15);
 }
 
+body.dark .music .extrabtns span:active{
+    color: aqua;
+    box-shadow: 
+        inset 0 -7px 5px rgba(255 255 255 / 0.25),
+        inset 0 5px 10px rgba(255 255 255 / 0.15);
+}
 
 @media screen and (max-width:600px) {
     .music{
@@ -178,5 +263,3 @@ body h1::before{
         max-width: 310px;
     }
 }
-
-
