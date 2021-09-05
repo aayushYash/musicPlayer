@@ -210,7 +210,7 @@ body.dark .music .player .btns span.active{
     padding: 5px;
 }
 
-.music .extrabtns span{
+.music .extrabtns span,a{
     position: relative;
     width: 80px;
     height: 80px;
@@ -227,7 +227,8 @@ body.dark .music .player .btns span.active{
         0 10px 15px rgba(0 0 0 / 0.1);
 }
 
-body.dark .music .extrabtns span{
+body.dark .music .extrabtns span,
+body.dark .music .extrabtns a{
     background: #091921;
     color: #fff;
     box-shadow: 
@@ -236,19 +237,22 @@ body.dark .music .extrabtns span{
         0 10px 15px rgba(255 255 255 / 0.1);
 }
 
-.music .extrabtns span{
+.music .extrabtns span,
+.music .extrabtns a{
     font-size: 2em;
     color: #777;
 }
 
-.music .extrabtns span:active{
+.music .extrabtns span:active,
+.music .extrabtns a:active{
     color: #ff669a;
     box-shadow: 
         inset 0 -7px 5px rgba(0 0 0 / 0.25),
         inset 0 5px 10px rgba(0 0 0 / 0.15);
 }
 
-body.dark .music .extrabtns span:active{
+body.dark .music .extrabtns span:active,
+body.dark .music .extrabtns a:active{
     color: aqua;
     box-shadow: 
         inset 0 -7px 5px rgba(255 255 255 / 0.25),
