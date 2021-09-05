@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hina Mincho', serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f9f9f9;
+    flex-direction: column;
+}
+
+body h1{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+}
+body h1::before{
+    content: '';
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    bottom: -2px;
+    background-color: #ff669a;
+    transform: translateX(-40px);
+}
+.music{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    border: 1px solid #fff;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 20px;
+    background: #f9f9f9;
+    box-shadow: 
+        -10px -10px 15px #fff,
+        10px 10px 15px rgba(0 0 0 / 0.1),
+        inset -5px -5px 15px #fff,
+        inset 5px 5px 15px rgba(0 0 0 / 0.1)
+    ;
+}
+.music .image{
+    /* background: #38a7ff; */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+    position: relative;
+    width: 200px;
+    border-radius: 50%;
+}
+.music .title{
+    font-weight: 500;
+    font-size: 2em;
+    color: #38a7ff;
+    display: inline-flex;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.music .player{
+    position: relative;
+    width: 500px;
+    min-height: 100px;
+    background: #f9f9f9;
+    border-radius: 80px;
+    border: 2px solid #fff;
+    padding: 10px;
+    box-shadow: 
+        -10px -10px 15px #fff,
+        10px 10px 15px rgba(0 0 0 / 0.1),
+        inset -5px -5px 15px #fff,
+        inset 5px 5px 15px rgba(0 0 0 / 0.1)
+    ;
+} 
+
+.music .player .btns{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /* background: ; */
+}
+.music .player .btns span{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    cursor: pointer;
+    box-shadow: 
+        inset 0 -5px 5px rgba(0 0 0 / 0.1),
+        0 5px 10px rgba(0 0 0 / 0.1),
+        0 10px 15px rgba(0 0 0 / 0.1);
+
+}
+.music .player .btns span:active,
+.music .player .btns span.active{
+    color: #ff669a;
+    box-shadow: 
+        inset 0 -7px 5px rgba(0 0 0 / 0.25),
+        inset 0 5px 10px rgba(0 0 0 / 0.15);
+}
+.music .player .btns span.playPause{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+.music .player .btns span ion-icon{
+    font-size: 2em;
+}
+
+.music .player .btns span.playPause ion-icon{
+    font-size: 3em;
+}
+.music .extrabtns{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;    
+    margin-top: 10px;
+    /* background-color: #ff669a; */
+    height: 100px;
+    padding: 5px;
+}
+
+.music .extrabtns span{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    cursor: pointer;
+    box-shadow: 
+        inset 0 -5px 5px rgba(0 0 0 / 0.1),
+        0 5px 10px rgba(0 0 0 / 0.1),
+        0 10px 15px rgba(0 0 0 / 0.1);
+}
+
+.music .extrabtns span{
+    font-size: 2em;
+    color: #777;
+}
+
+.music .extrabtns span:active{
+    color: #ff669a;
+    box-shadow: 
+        inset 0 -7px 5px rgba(0 0 0 / 0.25),
+        inset 0 5px 10px rgba(0 0 0 / 0.15);
+}
