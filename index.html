@@ -54,11 +54,22 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
 
-        function darkLightMode(){
-            const body=document.querySelector('body');
+        const body=document.querySelector('body');
+        function darkLightMode(){            
             body.classList.toggle('dark');
+            changeIcon();
         }
 
+        function changeIcon(){
+            const dark=document.querySelector('.darkBright');
+            if(body.classList.contains('dark'))
+            {
+                dark.innerHTML='<ion-icon name="sunny-outline"></ion-icon>';
+            }
+            else{
+                dark.innerHTML='<ion-icon name="moon-outline"></ion-icon>';
+            }
+        }
        
 
 
