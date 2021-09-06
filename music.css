@@ -212,21 +212,7 @@ body h1{
     
     overflow: hidden;
 }
-body h1::before{
-    content: '';
-    height: 5px;
-    width: 100%;
-    position: absolute;
-    bottom: -2px;
-    background-color: #ff669a;
-    transform: translateX(-10%);
-}
 
-
-
-body.dark h1::before{
-    background-color: aqua;
-}
 .music{
     display: flex;
     justify-content: center;
