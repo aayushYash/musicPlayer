@@ -156,6 +156,7 @@ const body=document.querySelector('body');
                 this.currentTime=0;
                 this.play();
             },false);
+        }
 
            
 
@@ -191,4 +192,4 @@ const body=document.querySelector('body');
         }
         next.addEventListener("click",nextSong)
                 
-        }
+        
