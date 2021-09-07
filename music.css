@@ -150,6 +150,129 @@ body.dark h1{
     color: #fff;
 }
 
+body.dark .music{
+    border: 4px solid #091921;
+    background: #091921;
+    box-shadow: 
+        -10px -10px 15px #091921,
+        10px 10px 15px rgba(255 255 255 / 0.1),
+        -10px -10px 15px rgba(255 255 255 / 0.1),
+        inset -5px -5px 15px #091921,
+        inset 5px 5px 15px rgba(255 255 255 / 0.15),
+        inset -5px -5px 15px #091921,
+        inset -10px -10px 15px rgba(255 255 255 / 0.15)
+    ;
+
+}
+
+.music .volume{
+    display: flex;
+    flex-direction: column;
+    /* display: grid; */
+    height: 40px;
+    position: absolute;
+    align-items: baseline;
+    justify-content: baseline;
+    /* bottom: ; */
+    right: 0px;
+    top: 150px;
+    /* background-color: #777; */
+    /* z-index: 1; */
+    max-width: 150px;
+    margin: 10px;
+    float: left;
+    transform: rotate(270deg);
+}
+
+.music .volume .volume_show
+{
+    color: #ff669a;
+    padding: 2.5px;
+    transform: rotate(90deg);
+    right: 0;
+    top: 0;
+    /* background: rgba(128 128 128 / 0.15); */
+    height: 25px;
+    width: 30px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.dark .music .volume .volume_show{
+    color:aqua
+
+}
+
+.music .volume #volume_icon{
+    transform: rotate(90deg) ;
+    color: #ff669a;
+    margin: 2.5px;
+    margin-bottom: 15px;
+    /* background-color: #091921; */
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.dark .music .volume #volume_icon{
+    color:aqua
+
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    height: 2px;
+    margin: 0 15px;
+    background: #fcb4cccf;
+    /* border-radius: 10px; */
+    /* border: 0; */
+}
+
+.dark input[type="range"]{
+    background: rgb(179, 248, 248);
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: #ff669a;
+    border-radius: 50%;
+    cursor: pointer;
+
+
+}
+
+.dark input[type="range"]::-webkit-slider-thumb{
+    background: aqua;
+}
+
+
+
+body.dark .music .title{
+    color: aqua;
+}
+
+body h1{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    
+    overflow: hidden;
+}
+/* body h1::before{
+    content: '';
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    bottom: -2px;
+    background-color: #ff669a;
+    transform: translateX(-10%);
+} */
+
 .below{
     position: relative;
     width: 300px;
@@ -166,9 +289,10 @@ body.dark h1{
 }
 
 .below span.animSpan{
-    animation: playingmusic 2s linear infinite;
-    animation-delay: calc(0.1s * var(--i));
+    animation: playingmusic 2s ease-in infinite;
+    animation-delay: calc(0.15s * var(--i));
 }
+
 
 body.dark .below span{
     background-color: aqua;
@@ -179,7 +303,7 @@ body.dark .below span{
        transform: scale(0); 
     }
     50%{
-        transform: scale(1.2); 
+        transform: scale(1.5); 
      }
      80%,100%{
         transform: scale(0); 
@@ -188,35 +312,11 @@ body.dark .below span{
 }
 
 
-body.dark .music{
-    border: 4px solid #091921;
-    background: #091921;
-    box-shadow: 
-        -10px -10px 15px #091921,
-        10px 10px 15px rgba(255 255 255 / 0.1),
-        -10px -10px 15px rgba(255 255 255 / 0.1),
-        inset -5px -5px 15px #091921,
-        inset 5px 5px 15px rgba(255 255 255 / 0.15),
-        inset -5px -5px 15px #091921,
-        inset -10px -10px 15px rgba(255 255 255 / 0.15)
-    ;
-
+body.dark h1::before{
+    background-color: aqua;
 }
-
-body.dark .music .title{
-    color: aqua;
-}
-
-body h1{
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    position: relative;
-    
-    overflow: hidden;
-}
-
 .music{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -234,6 +334,26 @@ body h1{
         inset 5px 5px 15px rgba(0 0 0 / 0.1)
     ;
 }
+
+.music .show_song_no{
+    position: absolute;
+    /* display: inline-block; */
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    color: #ff669a;
+
+}
+
+.dark .music .show_song_no{
+    color: aqua;
+}
+
 .music .image{
     /* background: #38a7ff; */
     background-position: center;
@@ -256,6 +376,7 @@ body.dark .music .image{
         0 5px 10px rgba(255 255 255 / 0.1),
         0 10px 15px rgba(255 255 255 / 0.1);
 }
+
 .music .title{
     font-weight: 500;
     font-size: 2em;
@@ -264,6 +385,12 @@ body.dark .music .image{
     text-align: center;
     margin-bottom: 20px;
 }
+
+.music .duration{
+    margin-bottom: 20px;
+    width: 300px;
+}
+
 .music .player{
     position: relative;
     width: 500px;
@@ -299,8 +426,8 @@ body.dark .music .player{
 }
 .music .player .btns span{
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background: #fff;
     border-radius: 50%;
     display: flex;
@@ -339,8 +466,8 @@ body.dark .music .player .btns span.active{
 }
 
 .music .player .btns span.playPause{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     text-align: center;
 }
 
@@ -365,8 +492,8 @@ body.dark .music .player .btns span.active{
 
 .music .extrabtns span,a{
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background: #fff;
     border-radius: 50%;
     display: flex;
@@ -380,6 +507,13 @@ body.dark .music .player .btns span.active{
         0 10px 15px rgba(0 0 0 / 0.1);
 }
 
+.music .extrabtns span:nth-child(2).active{
+    color: #ff669a;
+    box-shadow: 
+        inset 0 -7px 5px rgba(0 0 0 / 0.25),
+        inset 0 5px 10px rgba(0 0 0 / 0.15);
+}
+
 body.dark .music .extrabtns span,
 body.dark .music .extrabtns a{
     background: #091921;
@@ -388,6 +522,13 @@ body.dark .music .extrabtns a{
         inset 0 -5px 5px rgba(255 255 255 / 0.1),
         0 5px 10px rgba(255 255 255 / 0.1),
         0 10px 15px rgba(255 255 255 / 0.1);
+}
+
+.dark .music .extrabtns span:nth-child(2).active{
+    color: aqua;
+    box-shadow: 
+        inset 0 -7px 5px rgba(255 255 255 / 0.25),
+        inset 0 5px 10px rgba(255 255 255 / 0.15);
 }
 
 .music .extrabtns span,
