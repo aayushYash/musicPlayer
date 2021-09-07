@@ -30,31 +30,8 @@ const body=document.querySelector('body');
         const progress=document.querySelector('#seekbar');
         const below=document.querySelector('.below');
 
-        const belowSpan=below.children;
 
-        
-
-        // function playAnimation(){
-        //     for(var i=0;i<belowSpan.length;i++)
-        //     {
-        //         belowSpan[i].style.webkitAnimation="playingmusic 2s linear infinite";
-        //         belowSpan[i].style.webkitAnimationDelay= "calc(var(--i) * 0.1s)";
-        //     }
-        // }
-
-        // function pauseAnimation(){
-        //     for(var i=0;i<belowSpan.length;i++)
-        //     {
-        //         belowSpan[i].style.webkitAnimation=" ";
-        //     }
-        // }
-
-
-
-        
-
-
-        
+        const animationSpan=below.children;      
 
         
 
@@ -131,15 +108,17 @@ const body=document.querySelector('body');
 
         let song_Playing=false;
 
-        // audio.addEventListener("timeupdate",function(){
-        //         progress.value=( this.currentTime/this.duration )*10;
-        //     });
-
         // play song
         function playSong(){
             song_Playing=true;
             audio.play();
             playPause.classList.add('active');
+                
+            // onclick animation start
+           for(var i=0;i<animationSpan.length;i++)
+           {
+              animationSpan[i].classList.add('animSpan');
+           }
 
             
             //change icon
@@ -152,11 +131,11 @@ const body=document.querySelector('body');
             audio.pause();
             playPause.classList.remove('active');
 
-            
-
-            // audio.addEventListener("timeupdate",function(){
-            //     progress.value=( 5/10 );
-            // });
+            // onclick animation stop
+            for(var i=0;i<animationSpan.length;i++)
+            {
+                 animationSpan[i].classList.remove('animSpan');
+            }
            
             // change icon
             playPause.innerHTML='<ion-icon name="play-outline"></ion-icon>'
@@ -183,19 +162,15 @@ const body=document.querySelector('body');
 
            
 
-//             $('#player').on('timeupdate', function() {
-//     $('#seekbar').attr("value", this.currentTime / this.duration);
-// });
-            
-            // audio.onprogress= function(){
-            // progress.value=this.currentTime/this.duration;
-            // };
-        }
-        //  ccurrent song
+
+        //  current song
         let i=1;
 
         // onload select first song from list
         loadSong(songList[i])
+                
+                
+                
 
         function prevSong(){
             i--;
