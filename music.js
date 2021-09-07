@@ -145,9 +145,6 @@ const body=document.querySelector('body');
         playPause.addEventListener("click", () => (song_Playing?
         pauseSong():playSong()))
 
-        // playPause.addEventListener("click", () => (song_Playing?
-        //     playAnimation():pauseAnimation()))
-
         //load song
         function loadSong(songList){
             title.textContent= songList.songName;
