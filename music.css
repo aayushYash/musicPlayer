@@ -157,17 +157,20 @@ body.dark h1{
     display: flex;
 }
 
-.below .animSpan{
+.below span{
     height: 10px;
     width: 10px;
     background-color: #ff669a;
     margin: auto;
     border-radius: 50%;
-    animation: playingmusic 2s linear infinite;
-    animation-delay: calc(var(--i) * 0.1s);
 }
 
-body.dark .below .animSpan{
+.below span.animSpan{
+    animation: playingmusic 2s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+body.dark .below span{
     background-color: aqua;
 }
 
