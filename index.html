@@ -5,8 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
+
     <link rel = "icon" href ="musicIcon.png" type = "image/x-icon">
+
     <link rel="stylesheet" href="music.css">
+    <!-- <link rel="javascript" href="music.js"> -->
+    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8889873054069942"
      crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -56,7 +60,7 @@
         <span style="--i:9;" class=""></span>
         <span style="--i:10;" class=""></span>
         <span style="--i:11;" class=""></span>
-        <span style="--i:12;" class="></span>
+        <span style="--i:12;" class=""></span>
         <span style="--i:13;" class=""></span>
         <span style="--i:14;" class=""></span>
         <span style="--i:15;" class=""></span>
@@ -65,6 +69,7 @@
         <span style="--i:18;" class=""></span>
         <span style="--i:19;" class=""></span>
         <span style="--i:20;" class=""></span>
+        <!-- <div class="rocket"></div> -->
     </div>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8889873054069942"
      crossorigin="anonymous"></script>
@@ -79,10 +84,22 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
     <div class="music">
+        <div class="show_song_no">
+            <p id="present">1</p>
+            <p>/</p>
+            <p id="total">10</p>
+        </div>
         <div class="image"></div>
         <div class="title">Music name</div>
-        <!-- <progress id="seekbar" value="0" max="1" style="width:300px;"></progress> -->
-        <div class="player">
+        <div class="volume">            
+            <p class="volume_show">50</p>
+            <i class="fa fa-volume-up" aria-hidden="true" id="volume_icon" onclick="mute_sound()"></i>
+            <input type="range" min="0" max="100" value="50" onchange="volume_change()" id="volume">
+        </div>
+        <div class="duration">
+            <input type="range" id="duration_slider" min="0" max="100" value="0" onchange="change_duration()">
+        </div>
+        <div class="player" >
             <audio src="" loop></audio>
             <div class="btns">
                 <span class="prev">
@@ -101,6 +118,9 @@
             <span class="darkBright" onclick="darkLightMode()">
                 <ion-icon name="moon-outline"></ion-icon>
             </span>
+            <span id="auto" onclick="autoplay_switch()" class="">
+                <ion-icon name="repeat-outline"></ion-icon>
+            </span>
             <a class="download" href="" download="">
                 <ion-icon name="download-outline"></ion-icon>
             </a>
@@ -108,6 +128,6 @@
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="music.js">    </script>
+    <script src="music.js"></script>
 </body>
 </html>
