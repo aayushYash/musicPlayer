@@ -190,3 +190,5 @@ const body=document.querySelector('body');
             playSong();
         }
         next.addEventListener("click",nextSong)
+                
+        }
