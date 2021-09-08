@@ -388,7 +388,8 @@ body.dark .music .image{
 
 .music .duration{
     margin-bottom: 20px;
-    width: 300px;
+    width: 250px;
+    display: flex;
 }
 
 .music .player{
